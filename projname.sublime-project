@@ -1,0 +1,35 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+  {
+      "tab_size": 2
+  },
+  "build_systems": [
+		{
+			"name": "Project Closure Template",
+			"cmd": [
+				"java", "-jar", "$project_path/utils/compile/SoyToJsSrcCompiler.jar",
+				"--outputPathFormat", "$project_path/src/include/js/project/templates/${file_base_name}.js",
+				"--shouldProvideRequireSoyNamespaces",
+				"${file}"],
+			"selector": "source.soy"
+		},
+		{
+			"name": "Project Compass Watch",
+			"cmd": "cd '$project_path/src/html/assets'; compass watch",
+			"selector": "source.sass, source.scss",
+			"shell": "true"
+		},
+		{
+			"name": "Project Compass Compile",
+			"cmd": "cd '$project_path/src/html/assets'; compass compile",
+			"selector": "source.sass, source.scss",
+			"shell": "true"
+		}
+   ]
+}
