@@ -10,6 +10,7 @@ goog.require('projname.views.Panel');
  */
 projname.Main = function() {
   goog.base(this);
+  //
 };
 goog.inherits(projname.Main, goog.events.EventTarget);
 goog.addSingletonGetter(projname.Main);
